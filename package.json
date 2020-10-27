@@ -5,13 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "dev-auth": "nodemon authServer.js"
+    "dev-server": "nodemon server.js",
+    "dev-auth": "nodemon authServer.js",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-auth\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1"
