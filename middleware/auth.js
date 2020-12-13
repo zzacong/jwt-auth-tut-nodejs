@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
   // GET AUTH HEADER VALUE
   const bearerHeader = req.headers['authorization']
 
-  const token = bearerHeader && bearerHeader.split(' ')[1]
+  const token = bearerHeader?.split(' ')[1]
 
   if (!token) return res.sendStatus(401) // UNAUTHORIZED
   // Asynchronous way
